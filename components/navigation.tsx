@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Home, Scissors, User, Package, MessageSquare, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home")
@@ -17,7 +17,7 @@ export function Navigation() {
 
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/56949206057?text=Hola! 📱✨ Me gustaría reservar una cita en Peluquería Gianinna Canessa 💇‍♀️💫",
+      "https://wa.me/56949206057?text=Hola! Me gustaría reservar una cita en Peluquería Gianinna Canessa",
       "_blank",
     )
   }
@@ -26,7 +26,7 @@ export function Navigation() {
     { id: "home", icon: Home, label: "Inicio" },
     { id: "location", icon: MapPin, label: "Ubicación" },
     { id: "services", icon: Scissors, label: "Servicios" },
-    { id: "about", icon: User, label: "Nosotros" },
+    { id: "about", icon: User, label: "Historia" },
     { id: "products", icon: Package, label: "Productos" },
     { id: "testimonials", icon: MessageSquare, label: "Testimonios" },
   ]
@@ -34,47 +34,40 @@ export function Navigation() {
   return (
     <>
       {/* Floating Bottom Navigation */}
-      <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/90 backdrop-blur-sm border border-[#D4AF37]/30 rounded-full px-4 py-2">
-        <div className="flex items-center space-x-2">
+      <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-md sm:max-w-lg bg-black/95 backdrop-blur-md border border-[#D4AF37]/40 rounded-full px-3 py-2 shadow-[0_20px_60px_rgba(212,175,55,0.15)]">
+        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const IconComponent = item.icon
             return (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`p-3 rounded-full transition-all duration-200 ${
+                className={`flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full transition-all duration-200 ${
                   activeSection === item.id
                     ? "bg-[#D4AF37] text-black"
-                    : "text-white hover:text-[#D4AF37] hover:bg-[#D4AF37]/10"
+                    : "text-white/80 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10"
                 }`}
                 title={item.label}
               >
-                <IconComponent className="w-5 h-5" />
+                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             )
           })}
 
           {/* WhatsApp Button */}
-          <Button
+          <button
+            type="button"
             onClick={openWhatsApp}
-            className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold rounded-full px-4 py-2 ml-2"
-            size="sm"
+            className={buttonVariants({
+              variant: "default",
+              size: "sm",
+              className: "hidden sm:inline-flex bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-semibold rounded-full px-4 py-2",
+            })}
           >
-            📱✨ Reservar
-          </Button>
+            Reservar
+          </button>
         </div>
       </nav>
-
-      {/* Mobile WhatsApp Floating Button */}
-      <div className="md:hidden fixed bottom-20 right-4 z-40">
-        <Button
-          onClick={openWhatsApp}
-          className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold rounded-full w-14 h-14 shadow-lg"
-          size="sm"
-        >
-          💬
-        </Button>
-      </div>
     </>
   )
 }

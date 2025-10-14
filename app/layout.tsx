@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Gianinna Canessa - Salón de Belleza",
   description: "Más de 35 años creando looks únicos y especiales para cada mujer",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({

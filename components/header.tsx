@@ -1,46 +1,41 @@
-import { Button } from "@/components/ui/button"
-import { Menu, Phone, MapPin } from "lucide-react"
+"use client"
+
+import { buttonVariants } from "@/components/ui/button"
+import { MapPin, Phone, MessageCircle } from "lucide-react"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4 py-4">
+    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+      <div className="max-w-4xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold font-[family-name:var(--font-playfair)] text-foreground">
-              Luxe Hair Studio
+          <div className="flex flex-col">
+            <span className="text-[11px] uppercase tracking-[0.5em] text-white/60">Peluquería</span>
+            <h1 className="font-title text-xl font-semibold text-[#D4AF37] uppercase tracking-[0.35em]">
+              Gianinna Canessa
             </h1>
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-                Services
-              </a>
-              <a href="#products" className="text-muted-foreground hover:text-primary transition-colors">
-                Products
-              </a>
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-                About
-              </a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </a>
-            </nav>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="hidden lg:flex items-center space-x-4 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-1">
-                <Phone className="h-4 w-4" />
-                <span>(555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <MapPin className="h-4 w-4" />
-                <span>Downtown Location</span>
-              </div>
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/60">
+            <div className="hidden sm:flex items-center gap-1">
+              <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
+              <span>+56 9 4920 6057</span>
             </div>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Book Appointment</Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
+            <div className="hidden sm:flex items-center gap-1">
+              <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+              <span>Rancagua</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => window.open("https://wa.me/56949206057?text=Hola! Me gustaría reservar una cita", "_blank")}
+              className={buttonVariants({
+                variant: "default",
+                size: "sm",
+                className: "bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black rounded-full px-4 py-2 text-[11px] tracking-[0.25em]",
+              })}
+            >
+              <MessageCircle className="h-3.5 w-3.5 mr-1.5 text-[#25D366]" />
+              Reservar
+            </button>
           </div>
         </div>
       </div>

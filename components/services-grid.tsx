@@ -1,16 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Scissors, Palette, Droplets, Ruler, MessageCircle, Sparkles, Star } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
 
 const services = [
   {
     id: "cortes",
     title: "CORTES",
     icon: Scissors,
-    emoji: "✂️",
     description: "Cortes modernos y clásicos adaptados a tu estilo",
     works: [
       {
@@ -43,7 +42,6 @@ const services = [
     id: "peinados",
     title: "PEINADOS",
     icon: Sparkles,
-    emoji: "💇‍♀️",
     description: "Peinados elegantes para ocasiones especiales",
     works: [
       {
@@ -76,7 +74,6 @@ const services = [
     id: "coloracion",
     title: "COLORACIÓN",
     icon: Palette,
-    emoji: "🎨",
     description: "Técnicas avanzadas de coloración y mechas",
     works: [
       {
@@ -89,7 +86,7 @@ const services = [
         title: "Mechas Californianas",
         description: "Iluminación perfecta que realza tu belleza natural",
         duration: "100 min",
-        image: "/california-highlights.jpg",
+        image: "/woman-with-blonde-hair.jpg",
       },
       {
         title: "Color Completo",
@@ -109,7 +106,6 @@ const services = [
     id: "tratamientos",
     title: "TRATAMIENTOS",
     icon: Droplets,
-    emoji: "💧",
     description: "Tratamientos reparadores y nutritivos",
     works: [
       {
@@ -142,7 +138,6 @@ const services = [
     id: "extensiones",
     title: "EXTENSIONES",
     icon: Ruler,
-    emoji: "📏",
     description: "Extensiones de cabello natural de alta calidad",
     works: [
       {
@@ -175,7 +170,6 @@ const services = [
     id: "consultas",
     title: "CONSULTAS",
     icon: MessageCircle,
-    emoji: "💬",
     description: "Asesoría personalizada y análisis capilar",
     works: [
       {
@@ -210,38 +204,35 @@ export function ServicesGrid() {
   const [selectedService, setSelectedService] = useState<(typeof services)[0] | null>(null)
 
   return (
-    <section id="servicios" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#D4AF37] mb-4">
+    <section id="servicios" className="py-16 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center text-white uppercase tracking-[0.35em] mb-4">
           Nuestros Servicios
         </h2>
-        <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
-          Descubre nuestra amplia gama de servicios profesionales diseñados para realzar tu belleza natural
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto text-sm uppercase tracking-[0.3em]">
+          Belleza, detalle y precisión en cada experiencia
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
           {services.map((service) => {
             const IconComponent = service.icon
             return (
               <div
                 key={service.id}
                 onClick={() => setSelectedService(service)}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 text-center cursor-pointer hover:from-gray-800 hover:to-gray-700 transition-all duration-300 group border border-gray-700 hover:border-[#D4AF37]/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="bg-gradient-to-br from-[#0d0d0d] to-[#1a1a1a] rounded-3xl p-6 text-center cursor-pointer hover:from-[#1a1206] hover:to-[#1e1e1e] transition-all duration-300 group border border-[#2a2a2a] hover:border-[#D4AF37]/60 shadow-lg hover:shadow-xl"
               >
                 <div className="flex flex-col items-center space-y-4">
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {service.emoji}
-                  </div>
                   <IconComponent className="w-10 h-10 text-[#D4AF37] group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="font-playfair text-xl font-semibold text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="font-playfair text-xl font-semibold text-white group-hover:text-[#D4AF37] transition-colors uppercase">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-400 text-xs md:text-sm group-hover:text-gray-200 transition-colors leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-[#D4AF37] text-sm font-medium">
-                    <Star className="w-4 h-4 mr-1 fill-current" />
-                    Ver detalles
+                <div className="flex items-center text-[#D4AF37] text-sm font-medium uppercase tracking-wide">
+                  <Star className="w-4 h-4 mr-2 fill-current" />
+                  Ver detalles
                   </div>
                 </div>
               </div>
@@ -255,9 +246,8 @@ export function ServicesGrid() {
             {selectedService && (
               <>
                 <DialogHeader className="border-b border-gray-700 pb-4">
-                  <DialogTitle className="flex items-center gap-3 text-3xl font-playfair text-[#D4AF37]">
+                  <DialogTitle className="flex items-center gap-3 text-3xl font-playfair text-[#D4AF37] uppercase">
                     <selectedService.icon className="w-8 h-8" />
-                    <span className="text-2xl">{selectedService.emoji}</span>
                     {selectedService.title}
                   </DialogTitle>
                   <p className="text-gray-300 mt-2">{selectedService.description}</p>
@@ -278,20 +268,23 @@ export function ServicesGrid() {
                         <h4 className="font-playfair text-xl font-semibold text-white mb-2">{work.title}</h4>
                         <p className="text-gray-300 text-sm mb-3">{work.description}</p>
                         <div className="flex items-center justify-between">
-                          <span className="text-[#D4AF37] text-sm font-medium">⏱️ {work.duration}</span>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black bg-transparent"
+                          <span className="text-[#D4AF37] text-sm font-medium uppercase">Duración {work.duration}</span>
+                          <button
+                            type="button"
                             onClick={() =>
                               window.open(
-                                `https://wa.me/56949206057?text=Hola! 📱✨ Me interesa el servicio de ${work.title} 💇‍♀️💫`,
+                                `https://wa.me/56949206057?text=Hola! Me interesa el servicio de ${work.title}`,
                                 "_blank",
                               )
                             }
+                            className={buttonVariants({
+                              variant: "outline",
+                              size: "sm",
+                              className: "border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black bg-transparent",
+                            })}
                           >
-                            📱 Reservar
-                          </Button>
+                            Reservar
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -299,18 +292,22 @@ export function ServicesGrid() {
                 </div>
 
                 <div className="mt-8 text-center border-t border-gray-700 pt-6">
-                  <Button
-                    size="lg"
-                    className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-semibold px-8 py-3"
+                  <button
+                    type="button"
                     onClick={() =>
                       window.open(
-                        `https://wa.me/56949206057?text=Hola! 📱✨ Me interesa conocer más sobre los servicios de ${selectedService.title} 💇‍♀️💫`,
+                        `https://wa.me/56949206057?text=Hola! Me interesa conocer más sobre los servicios de ${selectedService.title}`,
                         "_blank",
                       )
                     }
+                    className={buttonVariants({
+                      variant: "default",
+                      size: "lg",
+                      className: "bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-semibold px-8 py-3",
+                    })}
                   >
-                    📱✨ Consultar por WhatsApp 💇‍♀️
-                  </Button>
+                    Consultar por WhatsApp
+                  </button>
                 </div>
               </>
             )}

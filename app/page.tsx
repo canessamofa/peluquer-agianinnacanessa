@@ -5,10 +5,13 @@ import { ServicesGrid } from "@/components/services-grid"
 import { AboutSection } from "@/components/about-section"
 import { ProductsSection } from "@/components/products-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black">
+      <Header />
       <Navigation />
 
       <section id="home">
@@ -33,7 +36,7 @@ export default function HomePage() {
         <TestimonialsSection />
       </section>
 
-      <div className="h-24"></div>
+      <Footer />
     </main>
   )
 }

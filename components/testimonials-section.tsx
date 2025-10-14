@@ -58,22 +58,27 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="py-16 px-4 bg-black">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">Lo que dicen nuestras clientas</h2>
-          <p className="text-gold/80 text-lg max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-white uppercase tracking-[0.35em] mb-4">
+            Lo que dicen nuestras clientas
+          </h2>
+          <p className="text-gray-400 text-xs uppercase tracking-[0.4em] max-w-2xl mx-auto">
             La satisfacción de nuestras clientas es nuestra mayor recompensa
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-gold/10 border-gold/20 hover:bg-gold/15 transition-colors">
+            <Card
+              key={testimonial.id}
+              className="bg-[#121212] border-[#D4AF37]/25 hover:bg-[#1d1d1d] transition-colors rounded-[24px]"
+            >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <Avatar className="h-12 w-12 mr-4">
                     <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                    <AvatarFallback className="bg-gold text-black">
+                    <AvatarFallback className="bg-[#D4AF37] text-black">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
@@ -81,7 +86,9 @@ export function TestimonialsSection() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="font-semibold text-gold">{testimonial.name}</h3>
+                    <h3 className="font-semibold text-white text-sm uppercase tracking-[0.2em]">
+                      {testimonial.name}
+                    </h3>
                     <div className="flex">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-[#D4AF37] text-[#D4AF37]" />
@@ -89,7 +96,9 @@ export function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gold/90 italic">"{testimonial.comment}"</p>
+                <p className="text-gray-300 text-sm leading-relaxed uppercase tracking-[0.1em]">
+                  "{testimonial.comment}"
+                </p>
               </CardContent>
             </Card>
           ))}
