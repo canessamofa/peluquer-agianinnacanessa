@@ -11,7 +11,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Gianinna es increíble! Mi cabello nunca se había visto tan bien. Su técnica de corte es perfecta y siempre me siento renovada después de cada visita.",
-    avatar: "/woman-with-beautiful-hair.jpg",
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ const testimonials = [
     rating: 5,
     comment:
       "El mejor salón de belleza de la ciudad. Los tratamientos son de primera calidad y el ambiente es muy relajante. Totalmente recomendado.",
-    avatar: "/elegant-woman-portrait.jpg",
   },
   {
     id: 3,
@@ -27,7 +25,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Llevo años viniendo aquí y nunca me decepciona. Gianinna entiende perfectamente lo que quiero y siempre supera mis expectativas.",
-    avatar: "/happy-woman-with-styled-hair.jpg",
   },
   {
     id: 4,
@@ -35,7 +32,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Profesionalismo y calidad en cada servicio. Mi cabello se ve saludable y hermoso gracias a los cuidados que recibo aquí.",
-    avatar: "/woman-with-curly-hair.jpg",
   },
   {
     id: 5,
@@ -43,7 +39,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Un lugar mágico donde mi cabello se transforma. Gianinna es una artista y su pasión por la belleza se nota en cada detalle.",
-    avatar: "/woman-with-blonde-hair.jpg",
   },
   {
     id: 6,
@@ -51,7 +46,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Excelente atención y resultados espectaculares. Gianinna y Gilda forman un equipo perfecto. Mi cabello siempre queda hermoso y saludable.",
-    avatar: "/woman-with-beautiful-hair.jpg",
   },
 ]
 

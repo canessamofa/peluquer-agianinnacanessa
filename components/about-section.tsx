@@ -36,8 +36,8 @@ export function AboutSection() {
             <div className="relative">
               <div className="aspect-[4/5] bg-[#111] rounded-[32px] overflow-hidden border border-[#D4AF37]/40">
                 <img
-                  src="/professional-hair-stylist-working-on-client-in-lux.jpg"
-                  alt="Gianinna Canessa trabajando"
+                  src="/peluqueria.jpeg"
+                  alt="Nuestra historia en la peluquería"
                   className="w-full h-full object-cover"
                 />
               </div>
