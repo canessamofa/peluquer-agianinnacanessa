@@ -88,7 +88,7 @@ export function Navigation() {
   return (
     <>
       {/* Floating Bottom Navigation */}
-      <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-md sm:max-w-lg bg-black/95 backdrop-blur-md border border-[#D4AF37]/40 rounded-full px-3 py-2 shadow-[0_20px_60px_rgba(212,175,55,0.15)]">
+      <nav className="fixed left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-md sm:max-w-lg bg-black/95 backdrop-blur-md border border-[#D4AF37]/40 rounded-full px-3 py-2 shadow-[0_20px_60px_rgba(212,175,55,0.15)]" style={{ bottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const IconComponent = item.icon

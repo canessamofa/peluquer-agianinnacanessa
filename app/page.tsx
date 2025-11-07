@@ -16,7 +16,7 @@ import { LampOrderSection } from "@/components/lamp-order-section"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black pb-28">
       <Header />
       <PromoModal />
       <PromoBanner />

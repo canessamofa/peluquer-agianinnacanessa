@@ -48,7 +48,7 @@ export function HeroCarousel() {
 
   return (
     <section className="py-8 px-4">
-      <div className="relative h-[78vh] max-w-4xl mx-auto overflow-hidden rounded-[2.5rem] border border-[#D4AF37]/25 shadow-[0_25px_80px_rgba(212,175,55,0.15)]">
+      <div className="relative h-[62vh] sm:h-[68vh] md:h-[72vh] lg:h-[78vh] max-w-4xl mx-auto overflow-hidden rounded-[2.5rem] border border-[#D4AF37]/25 shadow-[0_25px_80px_rgba(212,175,55,0.15)]">
         {/* Carousel Images */}
         <div className="relative h-full">
           {images.map((image, index) => (
