@@ -166,3 +166,15 @@ section[id] {
 .backdrop-blur-custom {
   backdrop-filter: blur(10px);
 }
+
+/* Limitar a scroll vertical: evitar desbordes horizontales y gestos laterales */
+html, body {
+  overflow-x: hidden;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+}
+
+/* Asegurar que elementos fijos respeten las safe areas en iOS cuando sea necesario */
+.supports-safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

@@ -67,7 +67,7 @@ export function ImageGridLightbox({ images, gridClassName }: Props) {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent showCloseButton className="bg-black border-white/10 p-2 sm:p-3">
+        <DialogContent showCloseButton className="bg-black border-white/10 p-2 sm:p-3 max-h-[100svh] overflow-y-auto">
           <div className="relative flex items-center justify-center">
             <button
               type="button"
@@ -85,7 +85,7 @@ export function ImageGridLightbox({ images, gridClassName }: Props) {
             <img
               src={images[safeIndex(index)]}
               alt="Imagen ampliada"
-              className="max-h-[85vh] max-w-[90vw] object-contain rounded-md"
+              className="max-h-[calc(100svh-6rem)] max-w-[100vw] object-contain rounded-md"
             />
 
             <button

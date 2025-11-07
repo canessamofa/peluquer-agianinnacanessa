@@ -5,7 +5,7 @@ import { MapPin, Phone, MessageCircle } from "lucide-react"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <header className="sticky z-50 bg-black/80 backdrop-blur-md border-b border-white/5" style={{ top: 'env(safe-area-inset-top, 0px)', paddingTop: 'env(safe-area-inset-top, 0px)' }}>
       <div className="max-w-4xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">

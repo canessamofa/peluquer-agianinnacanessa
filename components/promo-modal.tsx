@@ -23,9 +23,9 @@ export function PromoModal() {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4" style={{ paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-      <div className="relative w-full max-w-md rounded-2xl border border-[#D4AF37]/30 bg-[#0f0f0f] text-white shadow-[0_30px_120px_rgba(0,0,0,0.6)]">
+      <div className="relative w-full max-w-md rounded-2xl border border-[#D4AF37]/30 bg-[#0f0f0f] text-white shadow-[0_30px_120px_rgba(0,0,0,0.6)] max-h-[100svh] overflow-y-auto">
         <button
           aria-label="Cerrar"
           className="absolute right-3 top-3 rounded p-1 text-white/70 hover:bg-white/10"

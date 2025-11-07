@@ -14,7 +14,7 @@ export function PromoBanner() {
   if (hidden) return null
 
   return (
-    <div className="sticky top-[52px] z-40 bg-[#111] border-b border-[#D4AF37]/30">
+    <div className="sticky z-40 bg-[#111] border-b border-[#D4AF37]/30" style={{ top: 'calc(52px + env(safe-area-inset-top, 0px))' }}>
       <div className="max-w-4xl mx-auto px-4 py-3 flex items-start gap-3 text-sm">
         <div className="flex-1 text-center text-white/90">
           <span className="uppercase tracking-[0.35em] text-[#D4AF37] font-semibold">Promoción de noviembre</span>
